@@ -21,8 +21,23 @@ Or install it yourself as:
     $ gem install dawa
 
 ## Usage
+As Dawa is completely public, it is super simple to get started
 
-TODO: Write usage instructions here
+```ruby
+# Find the addresses on the street "Rødkildevej" and the street number 46.
+
+address = Dawa::Address.filter(street: "Rødkildevej", street_no: "46")
+[
+    <Dawa::Address street: "Rødkildevej", street_no: "46",  zip_code: "2400", city: "København NV",>
+    <Dawa::Address street: "Rødkildevej", street_no: "46",  zip_code: "8930", city: "Randers NØ">
+]
+```
+
+For performance reasons the minimal amount of data is requested. To get the full data structure, supply the `structure: :full` parameter.
+Or should this be a
+```ruby
+address = Dawa::Address.filter(street: "Rødkildevej", street_no: "46", struture: :full)
+```
 
 ## Development
 

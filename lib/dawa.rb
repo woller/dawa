@@ -3,6 +3,7 @@
 require_relative "dawa/version"
 
 module Dawa
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Client, "dawa/client"
+  autoload :Error, "dawa/error"
+  autoload :Address, "dawa/address"
 end
